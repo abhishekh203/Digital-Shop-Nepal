@@ -1,3 +1,5 @@
+// src/App.js
+
 import {
   BrowserRouter as Router,
   Route,
@@ -21,12 +23,12 @@ import { ProtectedRouteForUser } from "./protectedRoute/ProtectedRouteForUser";
 import { ProtectedRouteForAdmin } from "./protectedRoute/ProtectedRouteForAdmin";
 import CategoryPage from "./pages/category/CategoryPage";
 import ContactUs from "./components/Contactus/ContactUs";
-import PurchasePage from "./components/Purchasepage/PurchasePage";
+import PurchasePage from "./components/Purchasepage/PurchasePage"; // Import PurchasePage
 
 const App = () => {
   return (
     <MyState>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <ScrollTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -37,7 +39,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Contactus" element={<ContactUs />} />
-          <Route path="/purchase" element={<PurchasePage />} />
+          <Route path="/purchase" element={<PurchasePage />} /> {/* Ensure this route is correct */}
 
           <Route path="/category/:categoryname" element={<CategoryPage />} />
           <Route path="/user-dashboard" element={
@@ -68,4 +70,3 @@ const App = () => {
 }
 
 export default App;
-
